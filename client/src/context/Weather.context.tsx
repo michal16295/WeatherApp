@@ -21,7 +21,6 @@ export const WeatherProvider = ({
   const getCurrentWeather = async (currentCord: LocationCord) => {
     try {
       setLoading(true);
-      console.log(currentCord);
       const res = await weatherApi.getCurrentWeather(currentCord);
       setLocation({
         country: res.location.country,

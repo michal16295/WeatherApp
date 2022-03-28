@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
-
+import { WeatherProvider } from "./context/Weather.context";
 import Home from "./screens/Home";
 
 import routes from "./routes.json";
@@ -15,7 +15,9 @@ const App = () => {
   return (
     <ErrorBoundary>
       <Router>
-        <Routes>{publicRoutes}</Routes>
+        <WeatherProvider>
+          <Routes>{publicRoutes}</Routes>
+        </WeatherProvider>
       </Router>
     </ErrorBoundary>
   );

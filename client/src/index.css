@@ -15,7 +15,7 @@ body {
   position: relative;
   scroll-behavior: smooth;
   background-color: #ffffff;
-  color: #a8b2d1;
+  color: #444444;
 }
 #root {
   min-height: 100%;

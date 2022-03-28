@@ -1,9 +1,9 @@
-import { Location } from "./location";
+import { Location, LocationCord } from "./location";
 
 export interface WeatherContextType {
   loading: boolean;
   error?: string;
   location?: Location;
 
-  getCurrentWeather: () => void;
+  getCurrentWeather: (currentCord: LocationCord) => void;
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Location } from "../types/location";
+import { LocationCord } from "../types/location";
 
 const useGeoLocation = () => {
-  const [location, setLocation] = useState<Location | undefined>();
+  const [location, setLocation] = useState<LocationCord>();
 
   const onSuccess = (location: any): void => {
     setLocation({

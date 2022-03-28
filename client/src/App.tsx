@@ -14,7 +14,9 @@ const App = () => {
 
   return (
     <ErrorBoundary>
-      <Router></Router>
+      <Router>
+        <Routes>{publicRoutes}</Routes>
+      </Router>
     </ErrorBoundary>
   );
 };

@@ -1,7 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
 import * as weatherApi from "../apis/ weather.action";
-import useGeoLocation from "../hooks/useGeoLocation";
-import { WeatherContextType } from "../types/weather";
+import { WeatherContextType, Weather } from "../types/weather";
 import { LocationCord, Location } from "../types/location";
 import routes from "../routes.json";
 
@@ -17,6 +16,7 @@ export const WeatherProvider = ({
   const [error, setError] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
   const [location, setLocation] = useState<Location>();
+  const [weather, setWeather] = useState<Weather>();
 
   const getCurrentWeather = async (currentCord: LocationCord) => {
     try {
@@ -28,11 +28,25 @@ export const WeatherProvider = ({
         latitude: res.location.lat,
         longitude: res.location.lon,
       });
+      setLocationWeather(res.current);
     } catch (error) {
       setError(error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const setLocationWeather = (data: any): void => {
+    const { temp_c, uv, feelslike_c, humidity, condition, wind_kph } = data;
+    setWeather({
+      temp: temp_c,
+      wind: wind_kph,
+      text: condition.text,
+      feelsLike: feelslike_c,
+      icon: condition.icon,
+      humidity,
+      uv,
+    });
   };
 
   return (
@@ -41,6 +55,7 @@ export const WeatherProvider = ({
         loading,
         error,
         location,
+        weather,
         getCurrentWeather,
       }}
     >

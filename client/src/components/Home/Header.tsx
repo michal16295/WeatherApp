@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Header = ({ city, country }: { city: string; country: string }) => {
-  const date = new Date().toLocaleDateString("he");
+  const date = new Date().toLocaleDateString("en", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
   return (
     <Container>
       <div>
@@ -28,5 +33,6 @@ const Container = styled.div`
   p {
     color: #d7d7d9;
     font-size: clamp(0.875rem, 3.5vw, 1rem);
+    font-weight: 500;
   }
 `;

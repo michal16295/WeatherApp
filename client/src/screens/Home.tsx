@@ -4,10 +4,10 @@ import styled from "styled-components";
 import useGeoLocation from "../hooks/useGeoLocation";
 import useWeather from "../context/Weather.context";
 
-import { Header } from "../components/Home/index";
+import { Header, WeatherData } from "../components/Home/index";
 
 const Home = () => {
-  const { getCurrentWeather, location } = useWeather();
+  const { getCurrentWeather, location, weather } = useWeather();
   const currentCord = useGeoLocation();
 
   useEffect(() => {
@@ -17,6 +17,7 @@ const Home = () => {
   return (
     <Container>
       {location && <Header city={location.name} country={location?.country} />}
+      <WeatherData />
     </Container>
   );
 };
@@ -28,5 +29,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 25px;
 `;

@@ -1,7 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const WeatherData = () => {
+const WeatherData = ({
+  temp,
+  feelsLike,
+  text,
+}: {
+  temp: number;
+  feelsLike: number;
+  text: string;
+}) => {
   return (
     <Container>
       <Box>
@@ -10,12 +18,12 @@ const WeatherData = () => {
             <Image>
               <img src="https://res.cloudinary.com/photocloudmichal/image/upload/v1648477033/weather/sun/8_acbu1p.png" />
             </Image>
-            <h2>Heavy Rain</h2>
+            <h2>{text}</h2>
             <h3>Tonight</h3>
           </div>
           <Info>
-            <div>23°</div>
-            <p>Feels like 32°</p>
+            <div>{Math.floor(temp)}°</div>
+            <p>Feels like {Math.floor(feelsLike)}°</p>
           </Info>
         </Row>
       </Box>

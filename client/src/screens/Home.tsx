@@ -14,10 +14,20 @@ const Home = () => {
     if (currentCord) getCurrentWeather(currentCord);
   }, [currentCord]);
 
+  useEffect(() => {
+    console.log(weather);
+  }, []);
+
   return (
     <Container>
       {location && <Header city={location.name} country={location?.country} />}
-      <WeatherData />
+      {weather && (
+        <WeatherData
+          temp={weather.temp}
+          feelsLike={weather.feelsLike}
+          text={weather.text}
+        />
+      )}
     </Container>
   );
 };

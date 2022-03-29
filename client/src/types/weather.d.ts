@@ -8,6 +8,7 @@ export interface Weather {
   icon: string;
   humidity: number;
   rain: number;
+  isDay: boolean;
 }
 export interface WeatherContextType {
   loading: boolean;

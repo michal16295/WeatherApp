@@ -1,22 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import assets from "../../assets.json";
 
 const WeatherData = ({
   temp,
   feelsLike,
   text,
+  isDay,
 }: {
   temp: number;
   feelsLike: number;
   text: string;
+  isDay: boolean;
 }) => {
+  const getIcon = () => {
+    if (isDay) {
+      if (text === "Sunny") return assets.day.sun.Sunny;
+    } else {
+      return assets.night.stars;
+    }
+  };
   return (
     <Container>
       <Box>
         <Row>
           <div>
             <Image>
-              <img src="https://res.cloudinary.com/photocloudmichal/image/upload/v1648477033/weather/sun/8_acbu1p.png" />
+              <img src={getIcon()} />
             </Image>
             <h2>{text}</h2>
             <h3>Noon</h3>

@@ -5,6 +5,7 @@ import useGeoLocation from "../hooks/useGeoLocation";
 import useWeather from "../context/Weather.context";
 
 import { Header, WeatherData, DataItem } from "../components/Home/index";
+import assets from "../assets.json";
 
 const Home = () => {
   const { getCurrentWeather, location, weather } = useWeather();
@@ -27,20 +28,12 @@ const Home = () => {
             temp={weather.temp}
             feelsLike={weather.feelsLike}
             text={weather.text}
+            isDay={weather.isDay}
           />
           <Flex>
-            <DataItem
-              value={weather.rain + "%"}
-              icon="https://res.cloudinary.com/photocloudmichal/image/upload/v1648476952/weather/cloud/22_s4izwy.png"
-            />
-            <DataItem
-              value={weather.wind + "km/h"}
-              icon="https://res.cloudinary.com/photocloudmichal/image/upload/v1648477076/weather/sun/4_myogyi.png"
-            />
-            <DataItem
-              value={weather.humidity + "%"}
-              icon="https://res.cloudinary.com/photocloudmichal/image/upload/v1648476979/weather/sun/6_qcnlko.png"
-            />
+            <DataItem value={weather.rain + "%"} icon={assets.day.cloud.rain} />
+            <DataItem value={weather.wind + "km/h"} icon={assets.wind} />
+            <DataItem value={weather.humidity + "%"} icon={assets.humid} />
           </Flex>
         </>
       )}

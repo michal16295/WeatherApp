@@ -38,8 +38,15 @@ export const WeatherProvider = ({
   };
 
   const setLocationWeather = (data: any): void => {
-    const { temp_c, precip_in, feelslike_c, humidity, condition, wind_kph } =
-      data;
+    const {
+      is_day,
+      temp_c,
+      precip_in,
+      feelslike_c,
+      humidity,
+      condition,
+      wind_kph,
+    } = data;
     setWeather({
       temp: temp_c,
       wind: wind_kph,
@@ -48,6 +55,7 @@ export const WeatherProvider = ({
       icon: condition.icon,
       humidity,
       rain: precip_in,
+      isDay: is_day === 1 ? true : false,
     });
   };
 

@@ -1,0 +1,25 @@
+{
+  "day": {
+    "sun": {
+      "Sunny": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476976/weather/sun/26_jvkmgn.png"
+    },
+    "cloud": {
+      "snow": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476922/weather/cloud/18_gq3atd.png",
+      "light": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476938/weather/cloud/12_vbkmud.png",
+      "rain": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476954/weather/cloud/7_mxmwno.png",
+      "wind": {
+        "rain": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476955/weather/cloud/5_bjtjcx.png"
+      },
+      "star": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476955/weather/cloud/32_xqxffj.png"
+    }
+  },
+  "night": {
+    "stars": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648477024/weather/moon/10_vogpbb.png"
+  },
+  "snow": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476963/weather/snow/36_evagq3.png",
+  "lightning": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476959/weather/lighting/34_vyd91t.png",
+  "rain": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476973/weather/rain/39_yjcjte.png",
+  "star": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648477076/weather/star/38_iyx6je.png",
+  "wind": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648476979/weather/sun/6_qcnlko.png",
+  "humid": "https://res.cloudinary.com/photocloudmichal/image/upload/v1648477076/weather/sun/4_myogyi.png"
+}

@@ -8,7 +8,7 @@ export const getCurrentWeather = async (
 ): Promise<any> => {
   try {
     const res = await httpService.get(
-      `${routes.CURRENT_WEATHER}?key=${globalConstants.API_KEY}&q=${location?.latitude},${location?.longitude}&aqi=no`
+      `${routes.CURRENT_WEATHER}?key=${globalConstants.API_KEY}&q=${location?.latitude},${location?.longitude}&days=7&aqi=no&alerts=no`
     );
     return res.data;
   } catch (error) {

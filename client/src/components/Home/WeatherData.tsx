@@ -19,7 +19,7 @@ const WeatherData = ({
               <img src="https://res.cloudinary.com/photocloudmichal/image/upload/v1648477033/weather/sun/8_acbu1p.png" />
             </Image>
             <h2>{text}</h2>
-            <h3>Tonight</h3>
+            <h3>Noon</h3>
           </div>
           <Info>
             <div>{Math.floor(temp)}°</div>

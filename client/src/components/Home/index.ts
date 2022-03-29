@@ -1,4 +1,5 @@
 import Header from "./Header";
 import WeatherData from "./WeatherData";
+import DataItem from "./DataItem";
 
-export { Header, WeatherData };
+export { Header, WeatherData, DataItem };

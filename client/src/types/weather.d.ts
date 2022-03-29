@@ -7,7 +7,7 @@ export interface Weather {
   feelsLike: number;
   icon: string;
   humidity: number;
-  uv: number;
+  rain: number;
 }
 export interface WeatherContextType {
   loading: boolean;

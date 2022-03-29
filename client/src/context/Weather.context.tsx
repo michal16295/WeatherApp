@@ -29,6 +29,7 @@ export const WeatherProvider = ({
         longitude: res.location.lon,
       });
       setLocationWeather(res.current);
+      console.log(res.current);
     } catch (error) {
       setError(error);
     } finally {
@@ -37,7 +38,8 @@ export const WeatherProvider = ({
   };
 
   const setLocationWeather = (data: any): void => {
-    const { temp_c, uv, feelslike_c, humidity, condition, wind_kph } = data;
+    const { temp_c, precip_in, feelslike_c, humidity, condition, wind_kph } =
+      data;
     setWeather({
       temp: temp_c,
       wind: wind_kph,
@@ -45,7 +47,7 @@ export const WeatherProvider = ({
       feelsLike: feelslike_c,
       icon: condition.icon,
       humidity,
-      uv,
+      rain: precip_in,
     });
   };
 

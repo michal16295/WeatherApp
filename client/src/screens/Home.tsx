@@ -4,7 +4,12 @@ import styled from "styled-components";
 import useGeoLocation from "../hooks/useGeoLocation";
 import useWeather from "../context/Weather.context";
 
-import { Header, WeatherData, DataItem } from "../components/Home/index";
+import {
+  Header,
+  WeatherData,
+  DataItem,
+  FlatList,
+} from "../components/Home/index";
 import assets from "../assets.json";
 
 const Home = () => {
@@ -35,6 +40,7 @@ const Home = () => {
             <DataItem value={weather.wind + "km/h"} icon={assets.wind} />
             <DataItem value={weather.humidity + "%"} icon={assets.humid} />
           </Flex>
+          <FlatList />
         </>
       )}
     </Container>

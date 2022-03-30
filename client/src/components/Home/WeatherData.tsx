@@ -57,7 +57,7 @@ const Box = styled.div`
     rgba(171, 202, 253, 1) 0%,
     rgba(87, 151, 252, 1) 100%
   );
-  min-height: 200px;
+  max-height: 200px;
   box-shadow: 3px 7px 8px 1px rgb(191, 215, 252);
   padding: 10px 15px;
   color: #fdfefe;

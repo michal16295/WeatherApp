@@ -13,16 +13,12 @@ import {
 import assets from "../assets.json";
 
 const Home = () => {
-  const { getCurrentWeather, location, weather } = useWeather();
+  const { getCurrentWeather, location, weather, forcast } = useWeather();
   const currentCord = useGeoLocation();
 
   useEffect(() => {
     if (currentCord) getCurrentWeather(currentCord);
   }, [currentCord]);
-
-  useEffect(() => {
-    console.log(weather);
-  }, []);
 
   return (
     <Container>
@@ -40,9 +36,9 @@ const Home = () => {
             <DataItem value={weather.wind + "km/h"} icon={assets.wind} />
             <DataItem value={weather.humidity + "%"} icon={assets.humid} />
           </Flex>
-          <FlatList />
         </>
       )}
+      {forcast && <FlatList hours={forcast[0].hour} />}
     </Container>
   );
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SwipeableViews from "react-swipeable-views";
 import FlatListItem from "./FlatListItem";
 
-const FlatList = () => {
+const FlatList = ({ hours }: { hours?: any }) => {
   return (
     <Container>
       <Row>
@@ -11,14 +11,16 @@ const FlatList = () => {
         <h4>Next 7 Days </h4>
       </Row>
       <Row>
-        <FlatListItem />
-        <FlatListItem />
-        <FlatListItem />
-        <FlatListItem />
-        <FlatListItem />
-        <FlatListItem />
-        <FlatListItem />
-        <FlatListItem />
+        {hours.map((item: any, index: number) => {
+          return (
+            <FlatListItem
+              key={index.toString()}
+              temp={Math.floor(item.temp_c)}
+              icon={item.condition.icon}
+              hour={item.time}
+            />
+          );
+        })}
       </Row>
     </Container>
   );
@@ -38,4 +40,9 @@ const Row = styled.div`
   justify-content: space-between;
   overflow-x: auto;
   padding-bottom: 5px;
+
+  h4 {
+    color: rgba(87, 151, 252, 1);
+    cursor: pointer;
+  }
 `;

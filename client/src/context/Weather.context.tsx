@@ -17,6 +17,7 @@ export const WeatherProvider = ({
   const [loading, setLoading] = useState<boolean>(false);
   const [location, setLocation] = useState<Location>();
   const [weather, setWeather] = useState<Weather>();
+  const [forcast, setForcast] = useState<Array<any>>();
 
   const getCurrentWeather = async (currentCord: LocationCord) => {
     try {
@@ -29,7 +30,8 @@ export const WeatherProvider = ({
         longitude: res.location.lon,
       });
       setLocationWeather(res.current);
-      console.log(res.current);
+      console.log(res.forecast);
+      setForcast(res.forecast.forecastday);
     } catch (error) {
       setError(error);
     } finally {
@@ -66,6 +68,7 @@ export const WeatherProvider = ({
         error,
         location,
         weather,
+        forcast,
         getCurrentWeather,
       }}
     >

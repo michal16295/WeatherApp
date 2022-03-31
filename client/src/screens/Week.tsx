@@ -16,11 +16,7 @@ const Week = () => {
     if (!weather || !forcast) navigate(routes.HOME);
   }, []);
 
-  return (
-    <Container>
-      <Header />
-    </Container>
-  );
+  return <Container>{forcast && <Header days={forcast} />}</Container>;
 };
 
 export default Week;

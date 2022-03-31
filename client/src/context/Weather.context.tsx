@@ -30,7 +30,7 @@ export const WeatherProvider = ({
         longitude: res.location.lon,
       });
       setLocationWeather(res.current);
-      console.log(res.forecast);
+      console.log(res.forecast.forecastday);
       setForcast(res.forecast.forecastday);
     } catch (error) {
       setError(error);

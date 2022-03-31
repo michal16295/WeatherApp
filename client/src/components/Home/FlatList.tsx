@@ -11,7 +11,7 @@ const FlatList = ({ hours }: { hours?: any }) => {
     <Container>
       <Row>
         <h2>Today</h2>
-        <h4 onClick={() => navigate(routes.WEEK)}>Next 7 Days </h4>
+        <h4 onClick={() => navigate(routes.WEEK)}>Next 3 Days </h4>
       </Row>
       <Row>
         {hours.map((item: any, index: number) => {

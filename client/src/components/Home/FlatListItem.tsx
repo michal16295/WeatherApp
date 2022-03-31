@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 interface IProps {
@@ -14,13 +14,26 @@ const FlatListItem = ({
   hour: string;
   icon: string;
 }) => {
+  useEffect(() => {
+    let element = document.getElementById(new Date().getHours().toString());
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
+    }
+  }, []);
   const date = new Date(hour).toLocaleTimeString("he", {
     hour: "2-digit",
     minute: "2-digit",
   });
 
   return (
-    <Container selected={true}>
+    <Container
+      selected={new Date().getHours() === new Date(hour).getHours()}
+      id={new Date(hour).getHours().toString()}
+    >
       <TimeText>{date}</TimeText>
       <Image>
         <img src={icon} />
@@ -40,11 +53,11 @@ const Container = styled.div<IProps>`
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  padding: 5px 0;
+  padding: 15px 5px;
   justify-content: space-around;
   align-items: center;
   color: ${(props) => (props.selected ? "white" : "#cfd0d1")};
-  box-shadow: 3px 3px 6px rgb(212, 207, 251);
+  box-shadow: ${(props) => props.selected && "0 3px 6px #8e7ff8"};
 `;
 
 const Image = styled.div`
@@ -58,7 +71,7 @@ const Image = styled.div`
 `;
 
 const TimeText = styled.div`
-  font-size: clamp(0.75rem, 3.5vw, 1rem);
+  font-size: clamp(0.75rem, 3vw, 1rem);
 `;
 
 const DegText = styled.div`

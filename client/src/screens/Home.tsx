@@ -13,7 +13,8 @@ import {
 import assets from "../assets.json";
 
 const Home = () => {
-  const { getCurrentWeather, location, weather, forcast } = useWeather();
+  const { getCurrentWeather, location, weather, forcast, loading } =
+    useWeather();
   const currentCord = useGeoLocation();
 
   useEffect(() => {
